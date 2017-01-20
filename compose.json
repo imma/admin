@@ -31,6 +31,24 @@
       "image": "${BLOCK_REGISTRY}/block:admin",
       "hostname": "admin"
     },
+    "portainer": {
+      "volumes": [
+        "/data:/data",
+        "/config:/config",
+        "/var/run/docker.sock:/var/run/docker.sock"
+      ],
+      "ports": [
+        "${BLOCK_SSH_PORT}",
+        "9000:9000"
+      ],
+      "cap_add": [
+        "NET_ADMIN"
+      ],
+      "dns": "172.28.128.1",
+      "dns_search": "node.consul",
+      "image": "${BLOCK_REGISTRY}/block:portainer",
+      "hostname": "portainer"
+    },
     "consul": {
       "volumes": [
         "/data:/data",
