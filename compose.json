@@ -1,5 +1,19 @@
 {
   "version": "2",
+  "networks": {
+    "default": {
+      "ipam": {
+        "config": [
+          {
+            "subnet": "172.28.130.0/23",
+            "gateway": "172.28.130.1",
+            "ip_range": "172.28.131.0/24"
+          }
+        ]
+        }
+      }
+    }
+  },
   "services": {
     "admin": {
       "volumes": [
