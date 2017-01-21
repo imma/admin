@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+function main {
+  local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
+
+  mkdir -p "${BLOCK_PATH}"
+
+  if [[ ! -d "${BLOCK_PATH}/block/.git" ]]; then
+    (cd "${BLOCK_PATH}" && git clone git@github.com:imma/block)
+  fi
+  "${BLOCK_PATH}/block/script/cibuild"
+  source "${BLOCK_PATH}/block/script/profile"
+  "${BLOCK_PATH}/block/script/cibuild" "$@"
+  require "$shome"
+}
+
+main "$@"
