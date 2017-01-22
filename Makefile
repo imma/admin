@@ -4,7 +4,10 @@ $(eval $(REBUILD):;@:)
 endif
 REBUILD ?= app
 
-rebuild:
+../$(REBUILD):
+	git clone git@github.com:imma/$(REBUILD) ../$(REBUILD)
+	
+rebuild: ../$(REBUILD)
 	@figlet $(REBUILD) 2>/dev/null || true
 	@touch .$(REBUILD).building
 	cd ../$(REBUILD) && $(extra) make docker
