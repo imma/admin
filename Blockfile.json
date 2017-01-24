@@ -2,6 +2,6 @@
   "require": [
     "block",
     "jq",
-    "talign"
+    [ "talign", "defn" ]
   ]
 }
