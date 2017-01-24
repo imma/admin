@@ -137,6 +137,22 @@
       "dns_search": "node.consul",
       "image": "${BLOCK_REGISTRY}/block:nginx",
       "hostname": "nginx"
+    },
+    "gitlab": {
+      "volumes": [
+        "/data:/data",
+        "/config:/config"
+      ],
+      "ports": [
+        "22"
+      ],
+      "cap_add": [
+        "NET_ADMIN"
+      ],
+      "dns": "172.28.128.1",
+      "dns_search": "node.consul",
+      "image": "gitlab/gitlab-ce:latest",
+      "hostname": "gitlab"
     }
   }
 }
