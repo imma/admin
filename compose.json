@@ -142,9 +142,9 @@
       "volumes": [
         "/data:/data",
         "/config:/config",
-        "/config/gitlab:/etc/gitlabx",
-        "/data/gitlab/logs:/var/log/gitlabx",
-        "/data/gitlab/data:/var/opt/gitlabx"
+        "/config/gitlab:/etc/gitlab",
+        "/data/gitlab/logs:/var/log/gitlab",
+        "/data/gitlab/data:/var/opt/gitlab"
       ],
       "ports": [
         "22"
