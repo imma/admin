@@ -3,6 +3,8 @@
 function _admin_profile {
   local shome="${_admin_home:-"$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"}"
   PATH="$shome/bin:$shome/exec:$PATH"
+
+  export BLOCK_PATH="${BLOCK_PATH:-"$(cd -P -- "${shome}/.." && pwd -P)"}"
 }
 
 _admin_profile
