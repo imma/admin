@@ -1,6 +1,7 @@
 {
   "require": [
     "block",
-    "jq"
+    "jq",
+    "talign"
   ]
 }
