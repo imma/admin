@@ -11,7 +11,7 @@ function main {
   fi
   "${BLOCK_PATH}/block/script/cibuild"
   source "${BLOCK_PATH}/block/script/profile"
-  "${BLOCK_PATH}/block/script/cibuild" "$@"
+  "${BLOCK_PATH}/block/script/cibuild" "$shome"
   require "$shome"
 }
 
