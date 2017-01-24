@@ -13,6 +13,10 @@ function main {
   source "${BLOCK_PATH}/block/script/profile"
   "${BLOCK_PATH}/block/script/cibuild" "$shome"
   require "$shome"
+
+  if [[ ! -d "${BLOCK_PATH}/base/.git" ]]; then
+    (cd "${BLOCK_PATH}" && git clone git@github.com:imma/base)
+  fi
 }
 
 main "$@"
