@@ -17,6 +17,10 @@ function main {
   if [[ ! -d "${BLOCK_PATH}/base/.git" ]]; then
     (cd "${BLOCK_PATH}" && git clone git@github.com:imma/base)
   fi
+
+  if [[ ! -d "${BLOCK_PATH}/ubuntu-home/.git" ]]; then
+    (cd "${BLOCK_PATH}" && git clone git@github.com:imma/ubuntu-home)
+  fi
 }
 
 main "$@"
