@@ -12,3 +12,18 @@ dnsmasq
     > cat /etc/dnsmasq.d/consul
     server=/consul/172.28.128.1#5354
     server=/nih/172.28.128.1#5354
+
+pfctl
+
+    (echo 'rdr pass inet proto udp from any to any port 53 -> 172.28.128.1 port 5354';
+     echo 'rdr pass inet proto tcp from any to any port 53 -> 172.28.128.1 port 5354';) | sudo pfctl -f -
+
+resolver
+
+    > cat /etc/resolver/consul
+    domain consul
+    nameserver 127.0.0.1.53
+
+    > cat /etc/resolver/nih
+    domain nih
+    nameserver 127.0.0.1.53
