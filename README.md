@@ -5,5 +5,10 @@ Visit http://defn.sh/admin/ or open `docs/index.html`
 resolv.conf on Ubuntu hosts:
 
     > cat /var/run/resolvconf/interface/consul.dnsmasq
-    nameserver 172.28.128.1
     search node.consul
+
+dnsmasq
+
+    > cat /etc/dnsmasq.d/consul
+    server=/consul/172.28.128.1#5354
+    server=/nih/172.28.128.1#5354

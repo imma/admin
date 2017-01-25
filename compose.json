@@ -5,9 +5,9 @@
       "ipam": {
         "config": [
           {
-            "subnet": "172.28.130.0/23",
-            "gateway": "172.28.130.1",
-            "ip_range": "172.28.131.0/24"
+            "subnet": "${NET_SUBNET}.0/23",
+            "gateway": "${NET_SUBNET}.1",
+            "ip_range": "${NET_PREFIX}.0/24"
           }
         ]
       }
@@ -26,10 +26,38 @@
       "cap_add": [
         "NET_ADMIN"
       ],
-      "dns": "${DNS_SERVER}",
+      "networks": {
+        "default": {
+          "ipv4_address": "${NET_PREFIX}.0"
+        }
+      },
+      "dns": "172.28.128.1",
       "dns_search": "node.consul",
       "image": "${BLOCK_REGISTRY}/block:admin",
       "hostname": "admin"
+    },
+    "dnsmasq": {
+      "volumes": [
+        "/data:/data",
+        "/config:/config"
+      ],
+      "ports": [
+        "${BLOCK_SSH_PORT}",
+        "5354:5353",
+        "5354:5353/udp"
+      ],
+      "cap_add": [
+        "NET_ADMIN"
+      ],
+      "networks": {
+        "default": {
+          "ipv4_address": "${NET_PREFIX}.1"
+        }
+      },
+      "dns": "172.28.128.1",
+      "dns_search": "node.consul",
+      "image": "${BLOCK_REGISTRY}/block:dnsmasq",
+      "hostname": "dnsmasq"
     },
     "consul": {
       "volumes": [
@@ -44,28 +72,15 @@
       "cap_add": [
         "NET_ADMIN"
       ],
-      "dns": "${DNS_SERVER}",
+      "networks": {
+        "default": {
+          "ipv4_address": "${NET_PREFIX}.2"
+        }
+      },
+      "dns": "172.28.128.1",
       "dns_search": "node.consul",
       "image": "${BLOCK_REGISTRY}/block:consul",
       "hostname": "consul"
-    },
-    "dnsmasq": {
-      "volumes": [
-        "/data:/data",
-        "/config:/config"
-      ],
-      "ports": [
-        "${BLOCK_SSH_PORT}",
-        "53:5353",
-        "53:5353/udp"
-      ],
-      "cap_add": [
-        "NET_ADMIN"
-      ],
-      "dns": "${DNS_SERVER}",
-      "dns_search": "node.consul",
-      "image": "${BLOCK_REGISTRY}/block:dnsmasq",
-      "hostname": "dnsmasq"
     },
     "openvpn": {
       "volumes": [
@@ -83,7 +98,12 @@
       "cap_add": [
         "NET_ADMIN"
       ],
-      "dns": "${DNS_SERVER}",
+      "networks": {
+        "default": {
+          "ipv4_address": "${NET_PREFIX}.3"
+        }
+      },
+      "dns": "172.28.128.1",
       "dns_search": "node.consul",
       "image": "${BLOCK_REGISTRY}/block:openvpn",
       "hostname": "openvpn"
@@ -100,7 +120,12 @@
       "cap_add": [
         "NET_ADMIN"
       ],
-      "dns": "${DNS_SERVER}",
+      "networks": {
+        "default": {
+          "ipv4_address": "${NET_PREFIX}.4"
+        }
+      },
+      "dns": "172.28.128.1",
       "dns_search": "node.consul",
       "image": "${BLOCK_REGISTRY}/block:squid",
       "hostname": "squid"
@@ -117,7 +142,12 @@
       "cap_add": [
         "NET_ADMIN"
       ],
-      "dns": "${DNS_SERVER}",
+      "networks": {
+        "default": {
+          "ipv4_address": "${NET_PREFIX}.5"
+        }
+      },
+      "dns": "172.28.128.1",
       "dns_search": "node.consul",
       "image": "${BLOCK_REGISTRY}/block:nexus",
       "hostname": "nexus"
@@ -134,7 +164,12 @@
       "cap_add": [
         "NET_ADMIN"
       ],
-      "dns": "${DNS_SERVER}",
+      "networks": {
+        "default": {
+          "ipv4_address": "${NET_PREFIX}.6"
+        }
+      },
+      "dns": "172.28.128.1",
       "dns_search": "node.consul",
       "image": "${BLOCK_REGISTRY}/block:nginx",
       "hostname": "nginx"
@@ -153,7 +188,12 @@
       "cap_add": [
         "NET_ADMIN"
       ],
-      "dns": "${DNS_SERVER}",
+      "networks": {
+        "default": {
+          "ipv4_address": "${NET_PREFIX}.7"
+        }
+      },
+      "dns": "172.28.128.1",
       "dns_search": "node.consul",
       "image": "gitlab/gitlab-ce:latest",
       "hostname": "gitlab"
