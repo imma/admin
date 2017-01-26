@@ -173,30 +173,6 @@
       "dns_search": "node.consul",
       "image": "${BLOCK_REGISTRY}/block:nginx",
       "hostname": "nginx"
-    },
-    "gitlab": {
-      "volumes": [
-        "/data:/data",
-        "/config:/config",
-        "/config/gitlab:/etc/gitlab",
-        "/data/gitlab/logs:/var/log/gitlab",
-        "/data/gitlab/data:/var/opt/gitlab"
-      ],
-      "ports": [
-        "22"
-      ],
-      "cap_add": [
-        "NET_ADMIN"
-      ],
-      "networks": {
-        "default": {
-          "ipv4_address": "${NET_PREFIX}.7"
-        }
-      },
-      "dns": "172.28.128.1",
-      "dns_search": "node.consul",
-      "image": "gitlab/gitlab-ce:latest",
-      "hostname": "gitlab"
     }
   }
 }
