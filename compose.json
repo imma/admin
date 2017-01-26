@@ -17,8 +17,7 @@
     "admin": {
       "volumes": [
         "/data:/data",
-        "/config:/config",
-        "/var/run/docker.sock:/var/run/docker.sock"
+        "/config:/config"
       ],
       "ports": [
         "${BLOCK_SSH_PORT}"
