@@ -129,50 +129,6 @@
       "dns_search": "node.consul",
       "image": "${BLOCK_REGISTRY}/block:squid",
       "hostname": "squid"
-    },
-    "nexus": {
-      "volumes": [
-        "/data:/data",
-        "/config:/config"
-      ],
-      "ports": [
-        "${BLOCK_SSH_PORT}",
-        "5001:5001"
-      ],
-      "cap_add": [
-        "NET_ADMIN"
-      ],
-      "networks": {
-        "default": {
-          "ipv4_address": "${NET_PREFIX}.5"
-        }
-      },
-      "dns": "172.28.128.1",
-      "dns_search": "node.consul",
-      "image": "${BLOCK_REGISTRY}/block:nexus",
-      "hostname": "nexus"
-    },
-    "nginx": {
-      "volumes": [
-        "/data:/data",
-        "/config:/config"
-      ],
-      "ports": [
-        "${BLOCK_SSH_PORT}",
-        "80:8888"
-      ],
-      "cap_add": [
-        "NET_ADMIN"
-      ],
-      "networks": {
-        "default": {
-          "ipv4_address": "${NET_PREFIX}.6"
-        }
-      },
-      "dns": "172.28.128.1",
-      "dns_search": "node.consul",
-      "image": "${BLOCK_REGISTRY}/block:nginx",
-      "hostname": "nginx"
     }
   }
 }
