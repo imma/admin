@@ -171,6 +171,6 @@
       "dns_search": "node.consul",
       "image": "${BLOCK_REGISTRY}/block:linkerd",
       "hostname": "linkerd"
-    },
+    }
   }
 }
