@@ -156,7 +156,8 @@
         "/config:/config"
       ],
       "ports": [
-        "${BLOCK_SSH_PORT}"
+        "${BLOCK_SSH_PORT}",
+        "80:4140"
       ],
       "cap_add": [
         "NET_ADMIN"
