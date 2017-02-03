@@ -149,6 +149,27 @@
       "dns_search": "node.consul",
       "image": "${BLOCK_REGISTRY}/block:squid",
       "hostname": "squid"
-    }
+    },
+    "linkerd": {
+      "volumes": [
+        "/data:/data",
+        "/config:/config"
+      ],
+      "ports": [
+        "${BLOCK_SSH_PORT}"
+      ],
+      "cap_add": [
+        "NET_ADMIN"
+      ],
+      "networks": {
+        "default": {
+          "ipv4_address": "${NET_PREFIX}.7"
+        }
+      },
+      "dns": "172.28.128.1",
+      "dns_search": "node.consul",
+      "image": "${BLOCK_REGISTRY}/block:linkerd",
+      "hostname": "linkerd"
+    },
   }
 }
