@@ -43,7 +43,9 @@
         "/config:/config"
       ],
       "ports": [
-        "${BLOCK_SSH_PORT}"
+        "${BLOCK_SSH_PORT}",
+        "5354:5353",
+        "5354:5353/udp"
       ],
       "cap_add": [
         "NET_ADMIN"
