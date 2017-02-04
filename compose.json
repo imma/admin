@@ -20,9 +20,7 @@
         "/config:/config"
       ],
       "ports": [
-        "${BLOCK_SSH_PORT}",
-        "8400:8400",
-        "8500:8500"
+        "${BLOCK_SSH_PORT}"
       ],
       "cap_add": [
         "NET_ADMIN"
