@@ -4,13 +4,12 @@ Visit http://defn.sh/admin/ or open `docs/index.html`
 
 resolv.conf
 
-    > cat /var/run/resolvconf/interface/consul.dnsmasq
+    > cat /var/run/resolvconf/interface/consul.search
     search node.consul
 
 dnsmasq
 
     > cat /etc/dnsmasq.d/consul
-    server=/consul/172.28.128.1#5354
-    server=/nih/172.28.128.1#5354
-    server=8.8.8.8
-    server=8.8.4.4
+    server=/consul/127.0.0.1.1#5354
+    server=/nih/127.0.0.1#5354
+    server=127.0.0.1#5354
