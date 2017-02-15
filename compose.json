@@ -30,6 +30,7 @@
           "ipv4_address": "${NET_PREFIX}.0"
         }
       },
+      "dns": "172.28.128.1",
       "dns_search": "node.consul",
       "image": "${BLOCK_REGISTRY}/block:admin",
       "hostname": "admin"
@@ -52,6 +53,7 @@
           "ipv4_address": "${NET_PREFIX}.1"
         }
       },
+      "dns": "172.28.128.1",
       "dns_search": "node.consul",
       "image": "${BLOCK_REGISTRY}/block:dnsmasq",
       "hostname": "dnsmasq"
@@ -72,6 +74,7 @@
           "ipv4_address": "${NET_PREFIX}.2"
         }
       },
+      "dns": "172.28.128.1",
       "dns_search": "node.consul",
       "image": "${BLOCK_REGISTRY}/block:consul",
       "hostname": "consul"
@@ -92,6 +95,7 @@
           "ipv4_address": "${NET_PREFIX}.8"
         }
       },
+      "dns": "172.28.128.1",
       "dns_search": "node.consul",
       "image": "${BLOCK_REGISTRY}/block:consul-ui",
       "hostname": "consul-ui"
@@ -117,6 +121,7 @@
           "ipv4_address": "${NET_PREFIX}.3"
         }
       },
+      "dns": "172.28.128.1",
       "dns_search": "node.consul",
       "image": "${BLOCK_REGISTRY}/block:openvpn",
       "hostname": "openvpn"
@@ -138,6 +143,7 @@
           "ipv4_address": "${NET_PREFIX}.4"
         }
       },
+      "dns": "172.28.128.1",
       "dns_search": "node.consul",
       "image": "${BLOCK_REGISTRY}/block:squid",
       "hostname": "squid"
@@ -159,6 +165,7 @@
           "ipv4_address": "${NET_PREFIX}.7"
         }
       },
+      "dns": "172.28.128.1",
       "dns_search": "node.consul",
       "image": "${BLOCK_REGISTRY}/block:linkerd",
       "hostname": "linkerd"
