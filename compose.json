@@ -162,6 +162,27 @@
       "dns_search": "node.consul",
       "image": "${BLOCK_REGISTRY}/block:linkerd",
       "hostname": "linkerd"
+    },
+    "etcd": {
+      "volumes": [
+        "/data:/data",
+        "/config:/config"
+      ],
+      "ports": [
+        "${BLOCK_SSH_PORT}",
+        "80:4140"
+      ],
+      "cap_add": [
+        "NET_ADMIN"
+      ],
+      "networks": {
+        "default": {
+          "ipv4_address": "${NET_PREFIX}.15"
+        }
+      },
+      "dns_search": "node.consul",
+      "image": "${BLOCK_REGISTRY}/block:etcd",
+      "hostname": "etcd"
     }
   }
 }
