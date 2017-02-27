@@ -43,7 +43,7 @@
       ],
       "networks": {
         "default": {
-          "ipv4_address": "${NET_PREFIX}.1"
+          "ipv4_address": "${NET_PREFIX}.99"
         }
       },
       "dns_search": "node.consul",
