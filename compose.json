@@ -9,6 +9,9 @@
   },
   "services": {
     "admin": {
+      "environment": [
+        "SERVICE_2222_NAME=ssh"
+      ],
       "volumes": [
         "/data:/data",
         "/config:/config"
@@ -29,6 +32,10 @@
       "hostname": "admin"
     },
     "dnsmasq": {
+      "environment": [
+        "SERVICE_2222_NAME=ssh",
+        "SERVICE_5353_NAME=dns"
+      ],
       "volumes": [
         "/data:/data",
         "/config:/config"
@@ -51,6 +58,9 @@
       "hostname": "dnsmasq"
     },
     "consul": {
+      "environment": [
+        "SERVICE_2222_NAME=ssh"
+      ],
       "volumes": [
         "/data:/data",
         "/config:/config"
@@ -71,6 +81,9 @@
       "hostname": "consul"
     },
     "consul-ui": {
+      "environment": [
+        "SERVICE_2222_NAME=ssh"
+      ],
       "volumes": [
         "/data:/data",
         "/config:/config"
@@ -91,6 +104,10 @@
       "hostname": "consul-ui"
     },
     "openvpn": {
+      "environment": [
+        "SERVICE_2222_NAME=ssh",
+        "SERVICE_1194_NAME=openvpn"
+      ],
       "volumes": [
         "/data:/data",
         "/config:/config"
@@ -116,6 +133,13 @@
       "hostname": "openvpn"
     },
     "squid": {
+      "environment": [
+        "SERVICE_3128_NAME=squid",
+        "SERVICE_2222_NAME=ssh"
+      ],
+      "environment": [
+        "SERVICE_2222_NAME=ssh"
+      ],
       "volumes": [
         "/data:/data",
         "/config:/config"
@@ -137,6 +161,10 @@
       "hostname": "squid"
     },
     "linkerd": {
+      "environment": [
+        "SERVICE_2222_NAME=ssh",
+        "SERVICE_4140_NAME=linkerd"
+      ],
       "volumes": [
         "/data:/data",
         "/config:/config"
@@ -159,6 +187,9 @@
       "hostname": "linkerd"
     },
     "etcd": {
+      "environment": [
+        "SERVICE_2222_NAME=ssh"
+      ],
       "volumes": [
         "/data:/data",
         "/config:/config"
@@ -189,7 +220,7 @@
       },
       "image": "gliderlabs/registrator",
       "hostname": "registrator",
-      "command": "consul://${NET_PREFIX}.2:8500"
+      "command": "-internal consul://${NET_PREFIX}.2:8500"
     }
   }
 }
