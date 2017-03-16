@@ -82,7 +82,8 @@
     },
     "consul-ui": {
       "environment": [
-        "SERVICE_2222_NAME=ssh"
+        "SERVICE_2222_NAME=ssh",
+        "SERVICE_8500_NAME=consul-ui"
       ],
       "volumes": [
         "/data:/data",
