@@ -225,7 +225,7 @@
       },
       "image": "gliderlabs/registrator",
       "hostname": "registrator",
-      "command": "-internal consul://${NET_PREFIX}.2:8500"
+      "command": "-internal -resync 30 -retry-attempts -1 consul://${NET_PREFIX}.2:8500"
     }
   }
 }
