@@ -177,6 +177,19 @@
       "dns_search": "node.consul",
       "image": "${BLOCK_REGISTRY}/block:etcd",
       "hostname": "etcd"
+    },
+    "registrator": {
+      "volumes": [
+        "/var/run/docker.sock:/tmp/docker.sock"
+      ],
+      "networks": {
+        "default": {
+          "ipv4_address": "${NET_PREFIX}.16"
+        }
+      },
+      "image": "gliderlabs/registrator",
+      "hostname": "registrator",
+      "command": "consul://${NET_PREFIX}.2:8500"
     }
   }
 }
