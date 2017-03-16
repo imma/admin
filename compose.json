@@ -160,7 +160,8 @@
     "linkerd": {
       "environment": [
         "SERVICE_2222_NAME=ssh",
-        "SERVICE_4140_NAME=linkerd"
+        "SERVICE_4140_NAME=linkerd-admin",
+        "SERVICE_9990_NAME=linkerd"
       ],
       "volumes": [
         "/data:/data",
