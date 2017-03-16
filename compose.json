@@ -83,7 +83,7 @@
     "consul-ui": {
       "environment": [
         "SERVICE_2222_NAME=ssh",
-        "SERVICE_8500_NAME=consul-ui"
+        "SERVICE_8500_NAME=consul-admin"
       ],
       "volumes": [
         "/data:/data",
@@ -161,8 +161,8 @@
     "linkerd": {
       "environment": [
         "SERVICE_2222_NAME=ssh",
-        "SERVICE_4140_NAME=linkerd-admin",
-        "SERVICE_9990_NAME=linkerd"
+        "SERVICE_4140_NAME=linkerd",
+        "SERVICE_9990_NAME=linkerd-admin"
       ],
       "volumes": [
         "/data:/data",
