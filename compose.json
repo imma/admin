@@ -137,9 +137,6 @@
         "SERVICE_3128_NAME=squid",
         "SERVICE_2222_NAME=ssh"
       ],
-      "environment": [
-        "SERVICE_2222_NAME=ssh"
-      ],
       "volumes": [
         "/data:/data",
         "/config:/config"
