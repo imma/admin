@@ -168,7 +168,7 @@
       ],
       "environment": [
         "SERVICE_2222_NAME=ssh",
-        "SERVICE_4140_NAME=linkerd-router",
+        "SERVICE_1080_NAME=linkerd-router",
         "SERVICE_9990_NAME=linkerd"
       ],
       "expose": [
@@ -176,8 +176,7 @@
       ],
       "ports": [
         "${BLOCK_SSH_PORT}",
-        "80:4140",
-        "1080:4140"
+        "80:1080"
       ],
       "cap_add": [
         "NET_ADMIN"
