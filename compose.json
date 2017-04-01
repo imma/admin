@@ -27,7 +27,7 @@
           "ipv4_address": "${NET_PREFIX}.0"
         }
       },
-      "dns_search": "dc1.node.consul",
+      "dns_search": "node.dc1.consul",
       "image": "${BLOCK_REGISTRY}/block:admin",
       "hostname": "admin"
     },
@@ -53,7 +53,7 @@
           "ipv4_address": "${NET_PREFIX}.99"
         }
       },
-      "dns_search": "dc1.node.consul",
+      "dns_search": "node.dc1.consul",
       "image": "${BLOCK_REGISTRY}/block:dnsmasq",
       "hostname": "dnsmasq"
     },
@@ -76,7 +76,7 @@
           "ipv4_address": "${NET_PREFIX}.2"
         }
       },
-      "dns_search": "dc1.node.consul",
+      "dns_search": "node.dc1.consul",
       "image": "${BLOCK_REGISTRY}/block:consul",
       "hostname": "consul"
     },
@@ -103,7 +103,7 @@
           "ipv4_address": "${NET_PREFIX}.8"
         }
       },
-      "dns_search": "dc1.node.consul",
+      "dns_search": "node.dc1.consul",
       "image": "${BLOCK_REGISTRY}/block:consul-ui",
       "hostname": "consul-ui"
     },
@@ -132,7 +132,7 @@
           "ipv4_address": "${NET_PREFIX}.3"
         }
       },
-      "dns_search": "dc1.node.consul",
+      "dns_search": "node.dc1.consul",
       "image": "${BLOCK_REGISTRY}/block:openvpn",
       "hostname": "openvpn"
     },
@@ -157,7 +157,7 @@
           "ipv4_address": "${NET_PREFIX}.4"
         }
       },
-      "dns_search": "dc1.node.consul",
+      "dns_search": "node.dc1.consul",
       "image": "${BLOCK_REGISTRY}/block:squid",
       "hostname": "squid"
     },
@@ -187,7 +187,7 @@
           "ipv4_address": "${NET_PREFIX}.7"
         }
       },
-      "dns_search": "dc1.node.consul",
+      "dns_search": "node.dc1.consul",
       "image": "${BLOCK_REGISTRY}/block:linkerd",
       "hostname": "linkerd"
     },
@@ -210,7 +210,7 @@
           "ipv4_address": "${NET_PREFIX}.15"
         }
       },
-      "dns_search": "dc1.node.consul",
+      "dns_search": "node.dc1.consul",
       "image": "${BLOCK_REGISTRY}/block:etcd",
       "hostname": "etcd"
     },
