@@ -207,7 +207,7 @@
       ],
       "networks": {
         "default": {
-          "ipv4_address": "${NET_PREFIX}.18"
+          "ipv4_address": "${NET_PREFIX}.20"
         }
       },
       "dns_search": "node.dc1.consul",
