@@ -191,6 +191,52 @@
       "image": "${BLOCK_REGISTRY}/block:linkerd",
       "hostname": "linkerd"
     },
+    "linkerd-tcp": {
+      "volumes": [
+        "/data:/data",
+        "/config:/config"
+      ],
+      "environment": [
+        "SERVICE_2222_NAME=ssh",
+      ],
+      "ports": [
+        "${BLOCK_SSH_PORT}"
+      ],
+      "cap_add": [
+        "NET_ADMIN"
+      ],
+      "networks": {
+        "default": {
+          "ipv4_address": "${NET_PREFIX}.18"
+        }
+      },
+      "dns_search": "node.dc1.consul",
+      "image": "${BLOCK_REGISTRY}/block:linkerd-tcp",
+      "hostname": "linkerd-tcp"
+    },
+    "namerd": {
+      "volumes": [
+        "/data:/data",
+        "/config:/config"
+      ],
+      "environment": [
+        "SERVICE_2222_NAME=ssh",
+      ],
+      "ports": [
+        "${BLOCK_SSH_PORT}"
+      ],
+      "cap_add": [
+        "NET_ADMIN"
+      ],
+      "networks": {
+        "default": {
+          "ipv4_address": "${NET_PREFIX}.19"
+        }
+      },
+      "dns_search": "node.dc1.consul",
+      "image": "${BLOCK_REGISTRY}/block:namerd",
+      "hostname": "namerd"
+    },
     "etcd": {
       "environment": [
         "SERVICE_2222_NAME=ssh"
