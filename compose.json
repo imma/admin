@@ -10,7 +10,7 @@
   "services": {
     "admin": {
       "environment": [
-        "SERVICE_2222_NAME=ssh"
+        "SERVICE_2222_NAME=admin"
       ],
       "volumes": [
         "/data:/data",
@@ -22,18 +22,12 @@
       "cap_add": [
         "NET_ADMIN"
       ],
-      "networks": {
-        "default": {
-          "ipv4_address": "${NET_PREFIX}.0"
-        }
-      },
-      "dns_search": "node.dc1.consul",
-      "image": "${BLOCK_REGISTRY}/block:admin",
-      "hostname": "admin"
+      "dns_search": "node.dc1.consul service.dc1.consul",
+      "image": "${BLOCK_REGISTRY}/block:admin"
     },
     "dnsmasq": {
       "environment": [
-        "SERVICE_2222_NAME=ssh",
+        "SERVICE_2222_NAME=dnsmasq",
         "SERVICE_5353_NAME=dns"
       ],
       "volumes": [
@@ -53,13 +47,11 @@
           "ipv4_address": "${NET_PREFIX}.99"
         }
       },
-      "dns_search": "node.dc1.consul",
-      "image": "${BLOCK_REGISTRY}/block:dnsmasq",
-      "hostname": "dnsmasq"
+      "dns_search": "node.dc1.consul service.dc1.consul",
+      "image": "${BLOCK_REGISTRY}/block:dnsmasq"
     },
     "consul": {
       "environment": [
-        "SERVICE_2222_NAME=ssh"
       ],
       "volumes": [
         "/data:/data",
@@ -76,9 +68,8 @@
           "ipv4_address": "${NET_PREFIX}.2"
         }
       },
-      "dns_search": "node.dc1.consul",
-      "image": "${BLOCK_REGISTRY}/block:consul",
-      "hostname": "consul"
+      "dns_search": "node.dc1.consul service.dc1.consul",
+      "image": "${BLOCK_REGISTRY}/block:consul"
     },
     "consul-ui": {
       "volumes": [
@@ -86,7 +77,6 @@
         "/config:/config"
       ],
       "environment": [
-        "SERVICE_2222_NAME=ssh",
         "SERVICE_8500_NAME=consul-ui"
       ],
       "expose": [
@@ -98,18 +88,11 @@
       "cap_add": [
         "NET_ADMIN"
       ],
-      "networks": {
-        "default": {
-          "ipv4_address": "${NET_PREFIX}.8"
-        }
-      },
-      "dns_search": "node.dc1.consul",
-      "image": "${BLOCK_REGISTRY}/block:consul-ui",
-      "hostname": "consul-ui"
+      "dns_search": "node.dc1.consul service.dc1.consul",
+      "image": "${BLOCK_REGISTRY}/block:consul-ui"
     },
     "openvpn": {
       "environment": [
-        "SERVICE_2222_NAME=ssh",
         "SERVICE_1194_NAME=openvpn"
       ],
       "volumes": [
@@ -132,14 +115,12 @@
           "ipv4_address": "${NET_PREFIX}.3"
         }
       },
-      "dns_search": "node.dc1.consul",
-      "image": "${BLOCK_REGISTRY}/block:openvpn",
-      "hostname": "openvpn"
+      "dns_search": "node.dc1.consul service.dc1.consul",
+      "image": "${BLOCK_REGISTRY}/block:openvpn"
     },
     "squid": {
       "environment": [
-        "SERVICE_3128_NAME=squid",
-        "SERVICE_2222_NAME=ssh"
+        "SERVICE_3128_NAME=squid"
       ],
       "volumes": [
         "/data:/data",
@@ -152,14 +133,8 @@
       "cap_add": [
         "NET_ADMIN"
       ],
-      "networks": {
-        "default": {
-          "ipv4_address": "${NET_PREFIX}.4"
-        }
-      },
-      "dns_search": "node.dc1.consul",
-      "image": "${BLOCK_REGISTRY}/block:squid",
-      "hostname": "squid"
+      "dns_search": "node.dc1.consul service.dc1.consul",
+      "image": "${BLOCK_REGISTRY}/block:squid"
     },
     "linkerd": {
       "volumes": [
@@ -167,7 +142,6 @@
         "/config:/config"
       ],
       "environment": [
-        "SERVICE_2222_NAME=ssh",
         "SERVICE_1080_NAME=linkerd-router",
         "SERVICE_9990_NAME=linkerd"
       ],
@@ -182,14 +156,8 @@
       "cap_add": [
         "NET_ADMIN"
       ],
-      "networks": {
-        "default": {
-          "ipv4_address": "${NET_PREFIX}.7"
-        }
-      },
-      "dns_search": "node.dc1.consul",
-      "image": "${BLOCK_REGISTRY}/block:linkerd",
-      "hostname": "linkerd"
+      "dns_search": "node.dc1.consul service.dc1.consul",
+      "image": "${BLOCK_REGISTRY}/block:linkerd"
     },
     "linkerd-tcp": {
       "volumes": [
@@ -197,7 +165,7 @@
         "/config:/config"
       ],
       "environment": [
-        "SERVICE_2222_NAME=ssh"
+        "SERVICE_2222_NAME=linkerd-tcp"
       ],
       "ports": [
         "${BLOCK_SSH_PORT}"
@@ -205,14 +173,8 @@
       "cap_add": [
         "NET_ADMIN"
       ],
-      "networks": {
-        "default": {
-          "ipv4_address": "${NET_PREFIX}.20"
-        }
-      },
-      "dns_search": "node.dc1.consul",
-      "image": "${BLOCK_REGISTRY}/block:linkerd-tcp",
-      "hostname": "linkerd-tcp"
+      "dns_search": "node.dc1.consul service.dc1.consul",
+      "image": "${BLOCK_REGISTRY}/block:linkerd-tcp"
     },
     "namerd": {
       "volumes": [
@@ -220,7 +182,7 @@
         "/config:/config"
       ],
       "environment": [
-        "SERVICE_2222_NAME=ssh"
+        "SERVICE_2222_NAME=namerd"
       ],
       "ports": [
         "${BLOCK_SSH_PORT}"
@@ -228,18 +190,12 @@
       "cap_add": [
         "NET_ADMIN"
       ],
-      "networks": {
-        "default": {
-          "ipv4_address": "${NET_PREFIX}.19"
-        }
-      },
-      "dns_search": "node.dc1.consul",
-      "image": "${BLOCK_REGISTRY}/block:namerd",
-      "hostname": "namerd"
+      "dns_search": "node.dc1.consul service.dc1.consul",
+      "image": "${BLOCK_REGISTRY}/block:namerd"
     },
     "etcd": {
       "environment": [
-        "SERVICE_2222_NAME=ssh"
+        "SERVICE_2222_NAME=etcd"
       ],
       "volumes": [
         "/data:/data",
@@ -251,26 +207,14 @@
       "cap_add": [
         "NET_ADMIN"
       ],
-      "networks": {
-        "default": {
-          "ipv4_address": "${NET_PREFIX}.15"
-        }
-      },
-      "dns_search": "node.dc1.consul",
-      "image": "${BLOCK_REGISTRY}/block:etcd",
-      "hostname": "etcd"
+      "dns_search": "node.dc1.consul service.dc1.consul",
+      "image": "${BLOCK_REGISTRY}/block:etcd"
     },
     "registrator": {
       "volumes": [
         "/var/run/docker.sock:/tmp/docker.sock"
       ],
-      "networks": {
-        "default": {
-          "ipv4_address": "${NET_PREFIX}.16"
-        }
-      },
       "image": "gliderlabs/registrator",
-      "hostname": "registrator",
       "command": "-internal -resync 30 -retry-attempts -1 consul://${NET_PREFIX}.2:8500"
     }
   }
