@@ -206,7 +206,7 @@
         "/var/run/docker.sock:/tmp/docker.sock"
       ],
       "image": "gliderlabs/registrator",
-      "command": "-internal -resync 30 -retry-attempts -1 consul://${NET_PREFIX}.2:8500"
+      "command": "-internal -resync 30 -retry-attempts -1 consul://${NET_PREFIX}.1:8500"
     }
   }
 }
