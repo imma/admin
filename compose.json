@@ -118,7 +118,8 @@
         "/config:/config"
       ],
       "environment": [
-        "SERVICE_8500_NAME=consul-ui"
+        "SERVICE_8500_NAME=consul-ui",
+        "SERVICE=consul-ui"
       ],
       "expose": [
         "8500"
