@@ -8,6 +8,28 @@
     }
   },
   "services": {
+    "consul": {
+      "environment": [
+        "SERVICE_8500_NAME=consul"
+      ],
+      "volumes": [
+        "/data:/data",
+        "/config:/config"
+      ],
+      "ports": [
+        "${BLOCK_SSH_PORT}"
+      ],
+      "cap_add": [
+        "NET_ADMIN"
+      ],
+      "networks": {
+        "default": {
+          "ipv4_address": "${NET_PREFIX}.1"
+        }
+      },
+      "dns_search": "node.dc1.consul service.dc1.consul",
+      "image": "${BLOCK_REGISTRY}/block:consul"
+    },
     "admin": {
       "environment": [
         "SERVICE_2222_NAME=admin"
@@ -42,15 +64,10 @@
       "cap_add": [
         "NET_ADMIN"
       ],
-      "networks": {
-        "default": {
-          "ipv4_address": "${NET_PREFIX}.99"
-        }
-      },
       "dns_search": "node.dc1.consul service.dc1.consul",
       "image": "${BLOCK_REGISTRY}/block:dnsmasq"
     },
-    "consul": {
+    "consul-server": {
       "environment": [
       ],
       "volumes": [
@@ -63,11 +80,6 @@
       "cap_add": [
         "NET_ADMIN"
       ],
-      "networks": {
-        "default": {
-          "ipv4_address": "${NET_PREFIX}.2"
-        }
-      },
       "dns_search": "node.dc1.consul service.dc1.consul",
       "image": "${BLOCK_REGISTRY}/block:consul"
     },
@@ -110,11 +122,6 @@
       "cap_add": [
         "NET_ADMIN"
       ],
-      "networks": {
-        "default": {
-          "ipv4_address": "${NET_PREFIX}.3"
-        }
-      },
       "dns_search": "node.dc1.consul service.dc1.consul",
       "image": "${BLOCK_REGISTRY}/block:openvpn"
     },
