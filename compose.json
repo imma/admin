@@ -10,7 +10,8 @@
   "services": {
     "consul": {
       "environment": [
-        "SERVICE_8500_NAME=consul"
+        "SERVICE_8500_NAME=consul",
+        "SERVICE=consul"
       ],
       "volumes": [
         "/data:/data",
@@ -32,7 +33,8 @@
     },
     "openvpn": {
       "environment": [
-        "SERVICE_1194_NAME=openvpn"
+        "SERVICE_1194_NAME=openvpn",
+        "SERVICE=openvpn"
       ],
       "volumes": [
         "/data:/data",
@@ -94,6 +96,7 @@
     },
     "consul-server": {
       "environment": [
+        "SERVICE=consul-server" 
       ],
       "volumes": [
         "/data:/data",
@@ -153,7 +156,8 @@
       ],
       "environment": [
         "SERVICE_1080_NAME=linkerd-router",
-        "SERVICE_9990_NAME=linkerd"
+        "SERVICE_9990_NAME=linkerd",
+        "SERVICE=linkerd"
       ],
       "expose": [
         "9990"
