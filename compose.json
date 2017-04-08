@@ -30,6 +30,33 @@
       "dns_search": "node.dc1.consul service.dc1.consul",
       "image": "${BLOCK_REGISTRY}/block:consul"
     },
+    "openvpn": {
+      "environment": [
+        "SERVICE_1194_NAME=openvpn"
+      ],
+      "volumes": [
+        "/data:/data",
+        "/config:/config"
+      ],
+      "ports": [
+        "${BLOCK_SSH_PORT}",
+        "1194:1194"
+      ],
+      "privileged": true,
+      "cap_add": [
+        "NET_ADMIN"
+      ],
+      "cap_add": [
+        "NET_ADMIN"
+      ],
+      "networks": {
+        "default": {
+          "ipv4_address": "${NET_PREFIX}.3"
+        }
+      },
+      "dns_search": "node.dc1.consul service.dc1.consul",
+      "image": "${BLOCK_REGISTRY}/block:openvpn"
+    },
     "admin": {
       "environment": [
         "SERVICE_2222_NAME=admin"
@@ -102,28 +129,6 @@
       ],
       "dns_search": "node.dc1.consul service.dc1.consul",
       "image": "${BLOCK_REGISTRY}/block:consul-ui"
-    },
-    "openvpn": {
-      "environment": [
-        "SERVICE_1194_NAME=openvpn"
-      ],
-      "volumes": [
-        "/data:/data",
-        "/config:/config"
-      ],
-      "ports": [
-        "${BLOCK_SSH_PORT}",
-        "1194:1194"
-      ],
-      "privileged": true,
-      "cap_add": [
-        "NET_ADMIN"
-      ],
-      "cap_add": [
-        "NET_ADMIN"
-      ],
-      "dns_search": "node.dc1.consul service.dc1.consul",
-      "image": "${BLOCK_REGISTRY}/block:openvpn"
     },
     "squid": {
       "environment": [
