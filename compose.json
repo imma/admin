@@ -59,7 +59,6 @@
     },
     "admin": {
       "environment": [
-        "SERVICE_2222_NAME=admin"
       ],
       "volumes": [
         "/data:/data",
@@ -76,7 +75,6 @@
     },
     "dnsmasq": {
       "environment": [
-        "SERVICE_2222_NAME=dnsmasq",
         "SERVICE_5353_NAME=dns"
       ],
       "volumes": [
@@ -177,7 +175,6 @@
         "/config:/config"
       ],
       "environment": [
-        "SERVICE_2222_NAME=namerd"
       ],
       "ports": [
         "${BLOCK_SSH_PORT}"
@@ -190,7 +187,6 @@
     },
     "etcd": {
       "environment": [
-        "SERVICE_2222_NAME=etcd"
       ],
       "volumes": [
         "/data:/data",
