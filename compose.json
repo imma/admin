@@ -77,7 +77,8 @@
     },
     "dnsmasq": {
       "environment": [
-        "SERVICE_5353_NAME=dns"
+        "SERVICE_5353_NAME=dns",
+        "SERVICE=dnsmasq"
       ],
       "volumes": [
         "/data:/data",
