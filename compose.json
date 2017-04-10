@@ -59,22 +59,6 @@
       "dns_search": "node.dc1.consul service.dc1.consul",
       "image": "${BLOCK_REGISTRY}/block:openvpn"
     },
-    "admin": {
-      "environment": [
-      ],
-      "volumes": [
-        "/data:/data",
-        "/config:/config"
-      ],
-      "ports": [
-        "${BLOCK_SSH_PORT}"
-      ],
-      "cap_add": [
-        "NET_ADMIN"
-      ],
-      "dns_search": "node.dc1.consul service.dc1.consul",
-      "image": "${BLOCK_REGISTRY}/block:admin"
-    },
     "dnsmasq": {
       "environment": [
         "SERVICE_5353_NAME=dns",
