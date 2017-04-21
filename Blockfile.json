@@ -2,10 +2,6 @@
   "require": [
     "block",
     "jq",
-    "defn",
-    "nginx"
-  ],
-  "run": {
-    "nginx": {}
-  }
+    "defn"
+  ]
 }
