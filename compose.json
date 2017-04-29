@@ -123,6 +123,27 @@
       "dns_search": "node.dc1.consul service.dc1.consul",
       "image": "${BLOCK_REGISTRY}/block:linkerd"
     },
+    "linkerd-tcp": {
+      "volumes": [
+        "/data:/data",
+        "/config:/config"
+      ],
+      "environment": [
+        "SERVICE_3128_NAME=linkerd-tcp-squid",
+        "SERVICE_9992_NAME=linkerd-tcp-admin",
+        "SERVICE=linkerd-tcp"
+      ],
+      "ports": [
+        "${BLOCK_SSH_PORT}",
+        "3128:3128",
+        "9992:9992"
+      ],
+      "cap_add": [
+        "NET_ADMIN"
+      ],
+      "dns_search": "node.dc1.consul service.dc1.consul",
+      "image": "${BLOCK_REGISTRY}/block:linkerd-tcp"
+    },
     "namerd": {
       "volumes": [
         "/data:/data",
