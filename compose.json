@@ -107,7 +107,7 @@
       ],
       "environment": [
         "SERVICE_1080_NAME=linkerd-router",
-        "SERVICE_9990_NAME=linkerd",
+        "SERVICE_9990_NAME=linkerd-admin",
         "SERVICE=linkerd"
       ],
       "expose": [
@@ -130,9 +130,16 @@
         "/config:/config"
       ],
       "environment": [
+        "SERVICE_4100_NAME=namerd-thrift",
+        "SERVICE_4321_NAME=namerd-http",
+        "SERVICE_9991_NAME=namerd-admin",
+        "SERVICE=namerd"
       ],
       "ports": [
-        "${BLOCK_SSH_PORT}"
+        "${BLOCK_SSH_PORT}",
+        "4100:4100",
+        "4321:4321",
+        "9991:9991"
       ],
       "cap_add": [
         "NET_ADMIN"
