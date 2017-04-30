@@ -111,11 +111,11 @@
         "SERVICE=linkerd"
       ],
       "expose": [
-        "9990"
+        "9990",
+        "8888"
       ],
       "ports": [
-        "${BLOCK_SSH_PORT}",
-        "8888:8888"
+        "${BLOCK_SSH_PORT}"
       ],
       "cap_add": [
         "NET_ADMIN"
@@ -133,12 +133,15 @@
         "SERVICE_9992_NAME=linkerd-tcp-admin",
         "SERVICE=linkerd-tcp"
       ],
+      "expose": [
+        "9992",
+        "3128"
+      ],
       "ports": [
         "${BLOCK_SSH_PORT}",
         "3128:3128",
         "1080:3128",
-        "80:8888",
-        "9992:9992"
+        "80:8888"
       ],
       "cap_add": [
         "NET_ADMIN"
@@ -157,11 +160,13 @@
         "SERVICE_9991_NAME=namerd-admin",
         "SERVICE=namerd"
       ],
+      "expose": [
+        "4100",
+        "4321",
+        "9991"
+      ],
       "ports": [
-        "${BLOCK_SSH_PORT}",
-        "4100:4100",
-        "4321:4321",
-        "9991:9991"
+        "${BLOCK_SSH_PORT}"
       ],
       "cap_add": [
         "NET_ADMIN"
