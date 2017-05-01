@@ -10,8 +10,7 @@
   "services": {
     "consul": {
       "environment": [
-        "SERVICE_8500_NAME=consul",
-        "SERVICE=consul"
+        "SERVICE_8500_NAME=consul"
       ],
       "volumes": [
         "/data:/data",
@@ -33,8 +32,7 @@
     },
     "openvpn": {
       "environment": [
-        "SERVICE_1194_NAME=openvpn",
-        "SERVICE=openvpn"
+        "SERVICE_1194_NAME=openvpn"
       ],
       "volumes": [
         "/data:/data",
@@ -64,8 +62,7 @@
     },
     "dnsmasq": {
       "environment": [
-        "SERVICE_5353_NAME=dns",
-        "SERVICE=dnsmasq"
+        "SERVICE_5353_NAME=dns"
       ],
       "volumes": [
         "/data:/data",
@@ -88,8 +85,7 @@
         "/config:/config"
       ],
       "environment": [
-        "SERVICE_8500_NAME=consul-ui",
-        "SERVICE=consul-ui"
+        "SERVICE_8500_NAME=consul-ui"
       ],
       "expose": [
         "8500"
@@ -110,8 +106,7 @@
       ],
       "environment": [
         "SERVICE_8888_NAME=linkerd-router",
-        "SERVICE_9990_NAME=linkerd-admin",
-        "SERVICE=linkerd"
+        "SERVICE_9990_NAME=linkerd-admin"
       ],
       "expose": [
         "9990",
@@ -133,8 +128,7 @@
       ],
       "environment": [
         "SERVICE_3128_NAME=linkerd-tcp-squid",
-        "SERVICE_9992_NAME=linkerd-tcp-admin",
-        "SERVICE=linkerd-tcp"
+        "SERVICE_9992_NAME=linkerd-tcp-admin"
       ],
       "expose": [
         "9992"
@@ -159,8 +153,7 @@
       "environment": [
         "SERVICE_4100_NAME=namerd-thrift",
         "SERVICE_4321_NAME=namerd-http",
-        "SERVICE_9991_NAME=namerd-admin",
-        "SERVICE=namerd"
+        "SERVICE_9991_NAME=namerd-admin"
       ],
       "expose": [
         "4100",
