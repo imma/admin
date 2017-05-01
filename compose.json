@@ -44,7 +44,8 @@
         "1194"
       ],
       "ports": [
-        "${BLOCK_SSH_PORT}"
+        "${BLOCK_SSH_PORT}",
+        "1194:1194"
       ],
       "privileged": true,
       "cap_add": [
@@ -142,8 +143,7 @@
         "${BLOCK_SSH_PORT}",
         "3128:3128",
         "1080:3128",
-        "80:8888",
-        "1194:1194"
+        "80:8888"
       ],
       "cap_add": [
         "NET_ADMIN"
