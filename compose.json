@@ -40,9 +40,11 @@
         "/data:/data",
         "/config:/config"
       ],
+      "expose": [
+        "1194"
+      ],
       "ports": [
-        "${BLOCK_SSH_PORT}",
-        "1194:1194"
+        "${BLOCK_SSH_PORT}"
       ],
       "privileged": true,
       "cap_add": [
@@ -134,14 +136,14 @@
         "SERVICE=linkerd-tcp"
       ],
       "expose": [
-        "9992",
-        "3128"
+        "9992"
       ],
       "ports": [
         "${BLOCK_SSH_PORT}",
         "3128:3128",
         "1080:3128",
-        "80:8888"
+        "80:8888",
+        "1194:1194"
       ],
       "cap_add": [
         "NET_ADMIN"
