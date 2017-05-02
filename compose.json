@@ -113,37 +113,14 @@
         "8888"
       ],
       "ports": [
-        "${BLOCK_SSH_PORT}"
-      ],
-      "cap_add": [
-        "NET_ADMIN"
-      ],
-      "dns_search": "node.dc1.consul service.dc1.consul",
-      "image": "${BLOCK_REGISTRY}/block:linkerd"
-    },
-    "linkerd-tcp": {
-      "volumes": [
-        "/data:/data",
-        "/config:/config"
-      ],
-      "environment": [
-        "SERVICE_3128_NAME=linkerd-tcp-squid",
-        "SERVICE_9992_NAME=linkerd-tcp-admin"
-      ],
-      "expose": [
-        "9992"
-      ],
-      "ports": [
         "${BLOCK_SSH_PORT}",
-        "3128:3128",
-        "1080:3128",
         "80:8888"
       ],
       "cap_add": [
         "NET_ADMIN"
       ],
       "dns_search": "node.dc1.consul service.dc1.consul",
-      "image": "${BLOCK_REGISTRY}/block:linkerd-tcp"
+      "image": "${BLOCK_REGISTRY}/block:linkerd"
     },
     "namerd": {
       "volumes": [
