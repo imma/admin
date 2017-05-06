@@ -19,9 +19,6 @@
       "ports": [
         "${BLOCK_SSH_PORT}"
       ],
-      "cap_add": [
-        "NET_ADMIN"
-      ],
       "networks": {
         "default": {
           "ipv4_address": "${NET_PREFIX}.1"
@@ -29,36 +26,6 @@
       },
       "dns_search": "node.dc1.consul service.dc1.consul",
       "image": "${BLOCK_REGISTRY}/block:consul"
-    },
-    "openvpn": {
-      "environment": [
-        "SERVICE_1194_NAME=openvpn"
-      ],
-      "volumes": [
-        "/data:/data",
-        "/config:/config"
-      ],
-      "expose": [
-        "1194"
-      ],
-      "ports": [
-        "${BLOCK_SSH_PORT}",
-        "1194:1194"
-      ],
-      "privileged": true,
-      "cap_add": [
-        "NET_ADMIN"
-      ],
-      "cap_add": [
-        "NET_ADMIN"
-      ],
-      "networks": {
-        "default": {
-          "ipv4_address": "${NET_PREFIX}.3"
-        }
-      },
-      "dns_search": "node.dc1.consul service.dc1.consul",
-      "image": "${BLOCK_REGISTRY}/block:openvpn"
     },
     "dnsmasq": {
       "environment": [
@@ -72,9 +39,6 @@
         "${BLOCK_SSH_PORT}",
         "5354:5353",
         "5354:5353/udp"
-      ],
-      "cap_add": [
-        "NET_ADMIN"
       ],
       "dns_search": "node.dc1.consul service.dc1.consul",
       "image": "${BLOCK_REGISTRY}/block:dnsmasq"
@@ -92,9 +56,6 @@
       ],
       "ports": [
         "${BLOCK_SSH_PORT}"
-      ],
-      "cap_add": [
-        "NET_ADMIN"
       ],
       "dns_search": "node.dc1.consul service.dc1.consul",
       "image": "${BLOCK_REGISTRY}/block:consul-ui"
@@ -115,9 +76,6 @@
       "ports": [
         "${BLOCK_SSH_PORT}",
         "80:8888"
-      ],
-      "cap_add": [
-        "NET_ADMIN"
       ],
       "dns_search": "node.dc1.consul service.dc1.consul",
       "image": "${BLOCK_REGISTRY}/block:linkerd"
@@ -140,9 +98,6 @@
       "ports": [
         "${BLOCK_SSH_PORT}"
       ],
-      "cap_add": [
-        "NET_ADMIN"
-      ],
       "dns_search": "node.dc1.consul service.dc1.consul",
       "image": "${BLOCK_REGISTRY}/block:namerd"
     },
@@ -155,9 +110,6 @@
       ],
       "ports": [
         "${BLOCK_SSH_PORT}"
-      ],
-      "cap_add": [
-        "NET_ADMIN"
       ],
       "dns_search": "node.dc1.consul service.dc1.consul",
       "image": "${BLOCK_REGISTRY}/block:etcd"
